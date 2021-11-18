@@ -15,14 +15,14 @@ def show_grid(board):
 
 
 def win_case(cells_arr, symbol):
-    return (cells_arr[0][0] == symbol and cells_arr[0][1] == symbol and cells_arr[0][2]) == symbol \
-           or (cells_arr[1][0] == symbol and cells_arr[1][1] == symbol and cells_arr[1][2]) == symbol \
-           or (cells_arr[2][0] == symbol and cells_arr[2][1] == symbol and cells_arr[2][2]) == symbol \
-           or (cells_arr[0][0] == symbol and cells_arr[1][0] == symbol and cells_arr[2][0]) == symbol \
-           or (cells_arr[0][1] == symbol and cells_arr[1][1] == symbol and cells_arr[2][1]) == symbol \
-           or (cells_arr[0][2] == symbol and cells_arr[1][2] == symbol and cells_arr[2][2]) == symbol \
-           or (cells_arr[0][0] == symbol and cells_arr[1][1] == symbol and cells_arr[2][2]) == symbol \
-           or (cells_arr[0][2] == symbol and cells_arr[1][1] == symbol and cells_arr[2][0]) == symbol
+    return (cells_arr[0][0] == cells_arr[0][1] == cells_arr[0][2]) == symbol \
+           or (cells_arr[1][0] == cells_arr[1][1] == cells_arr[1][2]) == symbol \
+           or (cells_arr[2][0] == cells_arr[2][1] == cells_arr[2][2]) == symbol \
+           or (cells_arr[0][0] == cells_arr[1][0] == cells_arr[2][0]) == symbol \
+           or (cells_arr[0][1] == cells_arr[1][1] == cells_arr[2][1]) == symbol \
+           or (cells_arr[0][2] == cells_arr[1][2] == cells_arr[2][2]) == symbol \
+           or (cells_arr[0][0] == cells_arr[1][1] == cells_arr[2][2]) == symbol \
+           or (cells_arr[0][2] == cells_arr[1][1] == cells_arr[2][0]) == symbol
 
 
 grid = create_matrix("_________")
