@@ -37,39 +37,45 @@ counter_empty = 9
 
 while True:
 
-    x, y = input("Enter coordinates: ").split()
+    try:
 
-    if x not in digits or y not in digits:
-        print("You should enter numbers!")
+        x, y = input("Enter coordinates: ").split()
 
-    elif int(x) > 3 or int(x) < 1 or int(y) > 3 or int(y) < 1:
-        print("Coordinates should be from 1 to 3!")
+        if x not in digits or y not in digits:
+            print("You should enter numbers!")
 
-    elif grid[int(x) - 1][int(y) - 1] != "_":
-        print("This cell is occupied! Choose another one!")
+        elif int(x) > 3 or int(x) < 1 or int(y) > 3 or int(y) < 1:
+            print("Coordinates should be from 1 to 3!")
 
-    elif player_turn == "X":
+        elif grid[int(x) - 1][int(y) - 1] != "_":
+            print("This cell is occupied! Choose another one!")
 
-        grid[int(x) - 1][int(y) - 1] = 'X'
-        show_grid(grid)
-        player_turn = "O"
-        counter_empty -= 1
+        elif player_turn == "X":
 
-    elif player_turn == "O":
+            grid[int(x) - 1][int(y) - 1] = 'X'
+            show_grid(grid)
+            player_turn = "O"
+            counter_empty -= 1
 
-        grid[int(x) - 1][int(y) - 1] = 'O'
-        show_grid(grid)
-        player_turn = "X"
-        counter_empty -= 1
+        elif player_turn == "O":
 
-    if win_case(grid, 'X'):
-        print("X wins")
-        break
+            grid[int(x) - 1][int(y) - 1] = 'O'
+            show_grid(grid)
+            player_turn = "X"
+            counter_empty -= 1
 
-    elif win_case(grid, 'O'):
-        print("O wins")
-        break
+        if win_case(grid, 'X'):
+            print("X wins")
+            break
 
-    elif counter_empty == 0:
-        print("Draw")
-        break
+        elif win_case(grid, 'O'):
+            print("O wins")
+            break
+
+        elif counter_empty == 0:
+            print("Draw")
+            break
+
+    except ValueError:
+
+        print("You must enter 2 values")
