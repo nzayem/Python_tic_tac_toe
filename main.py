@@ -29,8 +29,6 @@ grid = create_matrix("_________")
 
 show_grid(grid)
 
-digits = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9']
-
 player_turn = "X"
 
 counter_empty = 9
@@ -41,10 +39,7 @@ while True:
 
         x, y = input("Enter coordinates: ").split()
 
-        if x not in digits or y not in digits:
-            print("You should enter numbers!")
-
-        elif int(x) > 3 or int(x) < 1 or int(y) > 3 or int(y) < 1:
+        if int(x) > 3 or int(x) < 1 or int(y) > 3 or int(y) < 1:
             print("Coordinates should be from 1 to 3!")
 
         elif grid[int(x) - 1][int(y) - 1] != "_":
@@ -78,4 +73,4 @@ while True:
 
     except ValueError:
 
-        print("You must enter 2 values")
+        print("You must enter 2 numbers")
